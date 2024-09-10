@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { QuotesContext } from "../context/QuotesContext";
-import { Link } from "react-router-dom";
 const Saved = () => {
   const { savedQuotes, setSavedQuotes } = useContext(QuotesContext);
   const handleRemove = (quote) => {
@@ -10,7 +9,9 @@ const Saved = () => {
     <div>
       <div className="flex flex-col gap-3 justify-center items-center py-16">
         {savedQuotes.length > 0 && (
-          <h1 className="text-7xl text-white my-8 font-unlock">Saved Quotes</h1>
+          <h1 className="text-7xl text-[#ffc64c] my-8 font-unlock">
+            Saved Quotes
+          </h1>
         )}
         {savedQuotes.map((quote) => {
           return (

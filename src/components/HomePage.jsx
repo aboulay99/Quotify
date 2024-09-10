@@ -29,7 +29,7 @@ const HomePage = () => {
         return (
           <div
             key={quote.id}
-            className="bg-[#ada596] relative overflow-hidden flex flex-col justify-center font-Archivo min-h-[180px] w-full md:w-[700px] text-gray-800 shadow-xl"
+            className="bg-[#ada596] relative overflow-hidden flex flex-col justify-center font-Archivo min-h-[180px] w-[97%]  md:w-[700px] text-gray-800 shadow-xl"
           >
             <div>
               <span className="absolute top-0 h-[40px] left-0 font-Archivo bg-[#fffcf5] shadow-lg font-normal  p-2 text-[#2d2d2d]">
@@ -40,7 +40,7 @@ const HomePage = () => {
             <p className="font-playfair text-xl md:text-2xl font-semibold text-[#272727] py-[40px] px-1">
               "{quote.text || "NO QUOTE"}"
             </p>
-            <div className="absolute bottom-2 right-2 ">
+            <div className="absolute bottom-2 right-2 hover:scale-110 duration-150">
               <svg
                 className="cursor-pointer"
                 onClick={() => handleSave(quote)}
