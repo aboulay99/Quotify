@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { QuotesContext } from "../context/QuotesContext.jsx";
 const HomePage = () => {
   const {
@@ -32,9 +33,11 @@ const HomePage = () => {
             className="bg-[#ada596] relative overflow-hidden flex flex-col justify-center font-Archivo min-h-[180px] w-[97%]  md:w-[700px] text-gray-800 shadow-xl"
           >
             <div>
-              <span className="absolute top-0 h-[40px] left-0 font-Archivo bg-[#fffcf5] shadow-lg font-normal  p-2 text-[#2d2d2d]">
-                {quote.author || "ANONYMOUS"}
-              </span>
+              <Link to={`/Quotify/Author/${quote.author}`}>
+                <span className="absolute top-0 h-[40px] left-0 font-Archivo bg-[#fffcf5] shadow-lg font-normal  p-2 text-[#2d2d2d]">
+                  {quote.author || "ANONYMOUS"}
+                </span>
+              </Link>
             </div>
 
             <p className="font-playfair text-xl md:text-2xl font-semibold text-[#272727] py-[40px] px-1">

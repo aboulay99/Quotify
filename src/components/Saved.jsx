@@ -9,7 +9,7 @@ const Saved = () => {
     <div>
       <div className="flex flex-col gap-3 justify-center items-center py-16">
         {savedQuotes.length > 0 && (
-          <h1 className="text-7xl text-[#ffc64c] my-8 font-unlock">
+          <h1 className="text-5xl md:text-7xl text-[#ffc64c] my-8 font-unlock">
             Saved Quotes
           </h1>
         )}

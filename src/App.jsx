@@ -3,6 +3,7 @@ import { QuotesProvider } from "./context/QuotesContext.jsx";
 import HomePage from "./components/HomePage.jsx";
 import Saved from "./components/Saved.jsx";
 import Nav from "./components/Nav.jsx";
+import Author from "./components/Author.jsx";
 
 const App = () => {
   return (
@@ -10,8 +11,9 @@ const App = () => {
       <Router>
         <Nav />
         <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/saved" element={<Saved />} />
+          <Route path="Quotify" element={<HomePage />} />
+          <Route path="Quotify/saved" element={<Saved />} />
+          <Route path="Quotify/Author/:author" element={<Author />} />
         </Routes>
       </Router>
     </QuotesProvider>
