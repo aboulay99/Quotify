@@ -5,7 +5,7 @@ export const QuotesContext = createContext();
 export const QuotesProvider = ({ children }) => {
   // This is for performance purposes.
   // I'am basically creating a version of the original data object
-  // to compute the text format once (converting it to lowerCase) instead of running the toLowerCase each time the user types something
+  // to compute the text format once (converting it to lowerCase) instead of running the toLowerCase() function each time the user types a character
   const normalizedData = useMemo(
     () =>
       data.map((quote) => ({
