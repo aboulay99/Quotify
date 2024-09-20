@@ -1,23 +1,40 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useMemo, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { QuotesContext } from "../context/QuotesContext";
 const Author = () => {
   let { author } = useParams();
-  const { resultQuotes, savedQuotes, handleSave } = useContext(QuotesContext);
+  const { resultQuotes, setSavedQuotes, savedQuotes, handleSave } =
+    useContext(QuotesContext);
   const AuthorQuotes = useMemo(() => {
     if (author === "anonymous") {
       return resultQuotes.filter((quote) => !quote.author);
     } else {
       return resultQuotes.filter((quote) => quote.author === author);
     }
-  }, [resultQuotes]);
-  console.log(author);
+  }, [resultQuotes, author]);
+  // const [isSaved, setIsSaved] = useState(false);
+
+  //save all the quotes by specific author
+  // const saveAll = () => {
+  //   AuthorQuotes.forEach(quote => {
+  //     if(savedQuotes.includes(quote))
+  //   });
+  // };
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <div className="flex flex-col gap-3 justify-center items-center py-16">
-      <div className="py-4 my-4">
+      <div className="py-4 my-4 flex flex-col space-y-8 items-center justify-center">
         <h1 className="text-3xl md:text-5xl font-playfair font-bold text-center text-white">
-          All Quotes by - {author}
+          All Quotes by - {author}({AuthorQuotes.length})
         </h1>
+        {/* <h1
+          className="cursor-pointer px-2 py-1 rounded-md  text-[#ffffff]  font-playfair bg-[#3d7c69]"
+          onClick={saveAll}
+        >
+          save all quotes by {author}
+        </h1> */}
       </div>
       {AuthorQuotes.map((quote) => (
         <div

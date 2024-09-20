@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { QuotesContext } from "../context/QuotesContext";
 const Saved = () => {
@@ -6,12 +6,17 @@ const Saved = () => {
   const handleRemove = (quote) => {
     setSavedQuotes(savedQuotes.filter((item) => item !== quote));
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <div>
       <div className="flex flex-col gap-3 justify-center items-center py-16">
         {savedQuotes.length > 0 && (
           <h1 className="text-5xl md:text-7xl text-[#ffc64c] my-8 font-unlock">
-            Saved Quotes
+            Saved Quotes{" "}
+            <span className="font-playfair">({savedQuotes.length})</span>
           </h1>
         )}
         {savedQuotes.map((quote) => {
@@ -46,9 +51,9 @@ const Saved = () => {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   class="lucide lucide-trash-2"
                 >
                   <path d="M3 6h18" />

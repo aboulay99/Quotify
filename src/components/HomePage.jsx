@@ -12,6 +12,9 @@ const HomePage = () => {
   useEffect(() => {
     resetResultQuotes();
   }, [resetResultQuotes]);
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <div className="flex flex-col gap-3 justify-center items-center py-16">
       <h1 className="text-5xl md:text-7xl text-white my-8 font-unlock font-semibold">
